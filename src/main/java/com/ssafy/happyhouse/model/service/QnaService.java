@@ -10,5 +10,5 @@ public interface QnaService {
 	void insert(QnaDto qna) throws Exception;
 	void delete(String num) throws Exception;
 	void modify(QnaDto qna) throws Exception;
-	
+	List<QnaDto> search(String word) throws Exception;
 }

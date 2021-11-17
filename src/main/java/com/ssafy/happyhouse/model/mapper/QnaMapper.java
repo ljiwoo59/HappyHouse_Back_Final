@@ -13,4 +13,5 @@ public interface QnaMapper {
 	void insert(QnaDto qna);
 	void delete(String num);
 	void modify(QnaDto qna);
+	List<QnaDto> search(String word);
 }

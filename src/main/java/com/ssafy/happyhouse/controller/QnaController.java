@@ -45,4 +45,10 @@ public class QnaController {
 	public void modify(@RequestBody QnaDto qna) throws Exception {
 		service.modify(qna);
 	}
+	
+	@GetMapping(value="/qna/find/{word}")
+	public List<QnaDto> search(@PathVariable String word) throws Exception {
+		return service.search(word);
+	}
+	
 }

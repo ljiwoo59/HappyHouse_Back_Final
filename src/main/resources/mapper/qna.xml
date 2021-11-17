@@ -28,4 +28,9 @@
 	<update id="modify" parameterType="QnaDto">
 		update qna set title = #{title}, content = #{content}, reply = #{reply} where num = #{num}
 	</update>
+	
+	<select id="search" parameterType="String" resultType="QnaDto">
+		select * from qna
+		where title like concat('%', #{word}, '%')
+	</select>
 </mapper>
