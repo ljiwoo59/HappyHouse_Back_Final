@@ -47,7 +47,7 @@
 					<a class="nav-link" href="#">News</a>
 				</li>
 				<li class="nav-item">
-					<a class="nav-link" href="#">QnA</a>
+					<a class="nav-link" href="qna.html">QnA</a>
 				</li>
 				<li class="nav-item">
 					<a class="nav-link" href="user/login">로그인</a>
@@ -85,7 +85,7 @@
 					<a class="nav-link" href="#">News</a>
 				</li>
 				<li class="nav-item">
-					<a class="nav-link" href="#">QnA</a>
+					<a class="nav-link" href="qna.html">QnA</a>
 				</li>
 				<li class="nav-item">
 					<a class="nav-link" href="user/mypage">회원정보</a>
