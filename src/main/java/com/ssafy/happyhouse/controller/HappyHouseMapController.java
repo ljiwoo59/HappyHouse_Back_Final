@@ -1,6 +1,7 @@
 package com.ssafy.happyhouse.controller;
 
 import java.util.List;
+import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -39,5 +40,16 @@ public class HappyHouseMapController {
 	@GetMapping("/apt")
 	public ResponseEntity<List<HouseInfoDto>> apt(@RequestParam("dong") String dong) throws Exception {
 		return new ResponseEntity<List<HouseInfoDto>>(service.getAptInDong(dong), HttpStatus.OK);
+	}
+	
+	@GetMapping("/searchaptName")
+	public ResponseEntity<List<HouseInfoDto>> aptName(@RequestParam("aptName") String aptName,@RequestParam("lat") String lat,@RequestParam("lng") String lng) throws Exception{
+		try {
+			double dlat = Double.parseDouble(lat);
+			double dlng = Double.parseDouble(lng);
+			return new ResponseEntity<List<HouseInfoDto>>(service.getAptName(aptName, dlat, dlng), HttpStatus.OK);
+		} catch (Exception e) {
+			return new ResponseEntity<List<HouseInfoDto>>(service.getAptName(aptName), HttpStatus.OK);
+		}
 	}
 }
