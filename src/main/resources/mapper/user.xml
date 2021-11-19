@@ -28,7 +28,7 @@
 	    select * from user where address = #{address}
 	</select>
 	
-	<select id="login" parameterType="map" resultType="UserDto">
+	<select id="login" parameterType="UserDto" resultType="UserDto">
 		select * from user where id = #{id} and password = #{password}
 	</select>
 	

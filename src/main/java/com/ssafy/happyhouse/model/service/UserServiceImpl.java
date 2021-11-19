@@ -47,8 +47,8 @@ public class UserServiceImpl implements UserService {
 	}
 
 	@Override
-	public UserDto login(Map<String, String> map) throws Exception {
-		return sqlSession.getMapper(UserMapper.class).login(map);
+	public UserDto login(UserDto c) throws Exception {
+		return sqlSession.getMapper(UserMapper.class).login(c);
 	}
 
 }

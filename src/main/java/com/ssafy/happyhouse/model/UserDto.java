@@ -7,6 +7,21 @@ public class UserDto {
 	private String name;
 	private String address;
 	
+	public UserDto() {}
+	
+	public UserDto(String id, String password) {
+		this.id = id;
+		this.password = password;
+	}
+	
+	public UserDto(String id, String password, String name, String address) {
+		super();
+		this.id = id;
+		this.password = password;
+		this.name = name;
+		this.address = address;
+	}
+	
 	public String getId() {
 		return id;
 	}

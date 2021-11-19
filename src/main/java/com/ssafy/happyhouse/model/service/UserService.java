@@ -13,6 +13,6 @@ public interface UserService {
 	public int delete(String id);
 	public List<UserDto> findByAddress(String address);
 	public int update(UserDto c);
-	public UserDto login(Map<String, String> map) throws Exception;
+	public UserDto login(UserDto c) throws Exception;
 	
 }
