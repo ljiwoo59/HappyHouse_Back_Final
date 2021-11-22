@@ -94,7 +94,7 @@ public class LoginController {
 	@PutMapping("/update")
 	public UserDto update(@RequestBody UserDto userDto, HttpSession session) {		
 		service.update(userDto);
-		session.setAttribute("userinfo", userDto);
+		//session.setAttribute("userinfo", userDto);
 //		return "redirect:/";
 		return userDto;
 	}
