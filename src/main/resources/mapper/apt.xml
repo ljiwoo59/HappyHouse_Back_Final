@@ -48,4 +48,10 @@
 		order by aptName
 	</select>
 
+	<select id="findLatLng" parameterType="string" resultType="houseInfoDto">
+		select avg(lat) as lat, avg(lng) as lng
+		from baseaddress b
+		where gugunName = #{gugun}
+	</select>
+
 </mapper>

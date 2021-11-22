@@ -131,4 +131,9 @@ public class HappyHouseMapServiceImpl implements HappyHouseMapService {
 		return list;
 	}
 
+	@Override
+	public HouseInfoDto getLatLng(String gugun) {
+		return sqlSession.getMapper(HouseMapMapper.class).findLatLng(gugun);
+	}
+
 }

@@ -19,4 +19,5 @@ public interface HappyHouseMapService {
 	void wordCount(String aptNam) throws Exception;
 	List<WordDto> selectTop() throws Exception;
 	List<HouseInfoDto> getAptName(String aptName) throws Exception;
+	HouseInfoDto getLatLng(String gugun);
 }

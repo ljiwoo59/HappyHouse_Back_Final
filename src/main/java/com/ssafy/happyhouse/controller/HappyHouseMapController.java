@@ -43,13 +43,25 @@ public class HappyHouseMapController {
 	}
 	
 	@GetMapping("/searchaptName")
-	public ResponseEntity<List<HouseInfoDto>> aptName(@RequestParam("aptName") String aptName,@RequestParam("lat") String lat,@RequestParam("lng") String lng) throws Exception{
-		try {
-			double dlat = Double.parseDouble(lat);
-			double dlng = Double.parseDouble(lng);
+	public ResponseEntity<List<HouseInfoDto>> aptName(@RequestParam("aptName") String aptName, @RequestParam String gugun) throws Exception{
+		HouseInfoDto latlng = null;
+		if (!gugun.equals("0")) {
+			latlng = service.getLatLng(gugun);
+			if (latlng == null) return new ResponseEntity<List<HouseInfoDto>>(service.getAptName(aptName), HttpStatus.OK);
+			double dlat = Double.parseDouble(latlng.getLat());
+			double dlng = Double.parseDouble(latlng.getLng());
 			return new ResponseEntity<List<HouseInfoDto>>(service.getAptName(aptName, dlat, dlng), HttpStatus.OK);
-		} catch (Exception e) {
-			return new ResponseEntity<List<HouseInfoDto>>(service.getAptName(aptName), HttpStatus.OK);
 		}
+		else return new ResponseEntity<List<HouseInfoDto>>(service.getAptName(aptName), HttpStatus.OK);
+		
+		
+//		try {
+//			double dlat = Double.parseDouble(lat);
+//			double dlng = Double.parseDouble(lng);
+//			return new ResponseEntity<List<HouseInfoDto>>(service.getAptName(aptName, dlat, dlng), HttpStatus.OK);
+//		} catch (Exception e) {
+//			return new ResponseEntity<List<HouseInfoDto>>(service.getAptName(aptName), HttpStatus.OK);
+//		}
 	}
+	
 }

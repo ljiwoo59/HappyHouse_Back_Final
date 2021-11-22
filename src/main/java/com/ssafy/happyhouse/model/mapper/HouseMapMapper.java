@@ -12,4 +12,5 @@ public interface HouseMapMapper {
 	List<HouseInfoDto> getDongInGugun(String gugun) throws Exception;
 	List<HouseInfoDto> getAptInDong(String dong) throws Exception;
 	List<HouseInfoDto> getAptName(String aptName) throws Exception;
+	HouseInfoDto findLatLng(String gugun);
 }
