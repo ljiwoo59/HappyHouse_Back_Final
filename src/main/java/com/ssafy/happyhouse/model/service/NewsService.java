@@ -15,4 +15,8 @@ public class NewsService {
     public List<NewsDto> getNewsList() {
         return jsoupComponent.getNewsList();
     }
+
+	public List<NewsDto> getNewsListS(String search) {
+		return jsoupComponent.getNewsListS(search);
+	}
 }
