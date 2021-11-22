@@ -14,7 +14,7 @@ public class NewsController {
 
     private final NewsService newsService;
 
-    @GetMapping("/news/all")
+    @GetMapping("/news")
     public List<NewsDto> getNewsList(HttpServletRequest request) {
         return newsService.getNewsList();
 
