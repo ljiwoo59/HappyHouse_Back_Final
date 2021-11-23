@@ -70,7 +70,11 @@ public class LoginController {
 		logger.debug("name : {}" , userDto.getName());
 		logger.debug("address : {}" , userDto.getAddress());
 	
-		int flag = service.insert(userDto);
+		int flag = 0;
+		if (selectOne(userDto.getId()) == null) {
+			service.insert(userDto);
+			flag = 1;
+		}
 //		if(userDto.getId() != null) {
 //			return "redirect:/";
 //		}else {
