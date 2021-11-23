@@ -61,7 +61,8 @@ public class JsoupComponent {
 
         title = dt.select("dt").text();
         url = dt.select("a").attr("href");
-        contents = dt.select(".lede").text().substring(0, 61) + "...";
+        contents = dt.select(".lede").text();
+        if (contents.length() > 61) contents = contents.substring(0, 61) + "...";
         time = dt.select(".date").text();
 
         fields[0].setAccessible(true);
